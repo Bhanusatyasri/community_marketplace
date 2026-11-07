@@ -1,0 +1,30 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function validImage() {
+      return request.resource.size < 5 * 1024 * 1024 &&
+        request.resource.contentType.matches('image/(jpeg|png|webp)');
+    }
+
+    match /profileImages/{uid}/{fileName} {
+      allow read: if signedIn();
+      allow create, update: if signedIn() &&
+        request.auth.uid == uid &&
+        validImage();
+      allow delete: if signedIn() && request.auth.uid == uid;
+    }
+
+    match /products/{uid}/{productId}/{fileName} {
+      allow read: if signedIn();
+      allow create, update: if signedIn() &&
+        request.auth.uid == uid &&
+        validImage();
+      allow delete: if signedIn() && request.auth.uid == uid;
+    }
+  }
+}

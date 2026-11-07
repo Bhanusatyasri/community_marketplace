@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "244157250039",
+    "project_id": "community-marketplace-ap-1dca8",
+    "storage_bucket": "community-marketplace-ap-1dca8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:244157250039:android:02b81972f7219e1e6ed6f2",
+        "android_client_info": {
+          "package_name": "com.example.community_marketplace"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbqfqreACVIUxgqFwl-xJkiz2sbfk6paw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
